@@ -9,3 +9,12 @@ const message_words = {
     colors: ['blue', 'red', 'yellow', 'brown', 'black', 'grey', 'orange', 'green', 'white'],
     minifigure: ['astronaut', 'adventure', 'hero', 'villain', 'knight', 'bandit', 'wizard', 'jedi']
 }
+
+// Store build in empty array
+let todaysBuild = []
+
+
+
+// console.log(`Today focus on sets with the Theme: ${}`);
+// console.log(`Main color of your build today be: ${}`);
+// console.log(`Today's build will be centered on a(n) ${} character`)
