@@ -13,20 +13,30 @@ const message_words = {
 // Store build in empty array
 let todaysBuild = [];
 
-for(const item of message_words){
-    let randomWord = generateRandomNumber(message_words[item].length);
+for(const item in message_words){
+    let randomNum= generateRandomNumber(message_words[item].length);
+    let randomWord = message_words[item][randomNum];
 
-    switch(message_words[item]){
+    switch(item){
         case 'theme':
-            todaysBuild = `Today focus on sets with the Theme: "${randomWord}"`;
+            todaysBuild.push(`The world you will build will be the theme: "${randomWord}"`);
+            break;
         case 'colors':
-            todaysBuild = `Main color of your build today be: "${randomWord}"`;
+            todaysBuild.push(`Focus on building with the color: "${randomWord}"`);
+            break;
         case 'minifigure':
-            todaysBuild = `Today's build will be centered on a(n) "${randomWord}" character`;
+            todaysBuild.push(`Your main character in this world is a(n) "${randomWord}"`);
+            break;
         default:
-            todaysBuild = 'Looks like you are not building';
+            todaysBuild.push('Looks like you are not building');
+            break;
     }
-};
+}
 
+const formatMessage = build => {
+    const format = build.join('\n');
+    console.log(format);
+}
 
-console.log(todaysBuild);
+formatMessage(todaysBuild);
+
